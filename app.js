@@ -6,7 +6,7 @@ submit.addEventListener("click", addTask);
 
 function addTask() {
   let taskText = input.value.trim();
-  if (!input) {
+  if (taskText === "") {
     alert("Title is compulsory");
     return;
   }
