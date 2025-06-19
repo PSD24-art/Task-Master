@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgb(191, 215, 235);
+}
+
+h1 {
+  position: fixed;
+  top: 25%;
+}
+
+.container {
+  height: 35vh;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+  line-height: 1.5rem;
+  padding: 20px;
+  background-color: transparent;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  -ms-overflow-style: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+#task-title {
+  height: 2rem;
+  width: 18rem;
+  border: 0 solid transparent;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+
+#description {
+  height: 4rem;
+  width: 18rem;
+  border: 0 solid transparent;
+  border-radius: 0.5rem;
+  background-color: white;
+  overflow: auto;
+}
+
+#submit {
+  position: relative;
+  height: 1.8rem;
+  width: 190px;
+  border: 0 solid transparent;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  background-color: rgb(211, 115, 98);
+  transition: all 0.5s ease;
+  color: white;
+}
+
+#submit:hover {
+  transform: scale(1.4);
+  box-shadow: 0 0 3px rgb(9, 8, 8);
+  cursor: pointer;
+}
+
+#card {
+  flex-direction: column;
+  border: 2px solid black;
+  height: auto;
+  width: 18rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0 solid transparent;
+  border-radius: 0.5rem;
+}
+
+.tCard {
+  border: 2px solid black;
+  height: auto;
+  width: 18rem;
+  display: flex;
+  align-items: start;
+  justify-content: left;
+  background-color: rgb(247, 247, 231);
+  border: 0 solid transparent;
+  border-radius: 0.5rem;
+  margin: 5px;
+}
+
+#para {
+  position: relative;
+  left: 2%;
+}
