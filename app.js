@@ -28,25 +28,25 @@ function addTask() {
   //empty all the input fields
   title.value = "";
   descript.value = "";
-  tasks = [];
   console.log(`Current Task: ${task.title}`);
 }
 
 function renderTask() {
   const card = document.getElementById("card");
-  const sepCard = document.createElement("div");
-  sepCard.setAttribute("class", "sepCard");
-  sepCard.classList.add("sepCard");
-
+  card.innerHTML = "";
   tasks.forEach((item, index) => {
+    const sepCard = document.createElement("div");
+    sepCard.setAttribute("class", "sepCard");
+    sepCard.classList.add("sepCard");
+
     //Title
-    let tTitle = document.createElement("p");
+    const tTitle = document.createElement("p");
     tTitle.innerText = item.title;
     tTitle.classList.add("tCard");
     sepCard.appendChild(tTitle);
 
     //Description
-    let tDescript = document.createElement("p");
+    const tDescript = document.createElement("p");
     tDescript.innerText = item.description;
     tDescript.classList.add("tCard");
     sepCard.appendChild(tDescript);
@@ -66,7 +66,6 @@ function renderTask() {
     delBtn.addEventListener("click", () => {
       tasks.splice(index, 1);
       renderTask();
-      sepCard.innerHTML = "";
     });
 
     //Edit button
@@ -79,7 +78,10 @@ function renderTask() {
     editBtn.addEventListener("click", () => {
       //Creating new Input title and description
       let titleInput = document.createElement("input");
+      titleInput.classList.add("task-title");
+
       let descriptInput = document.createElement("textarea");
+      descriptInput.classList.add("description");
 
       //Assigning the existing values to the respective inputs
       titleInput.value = item.title;
@@ -88,6 +90,25 @@ function renderTask() {
       //Updating the child element with new input elements
       sepCard.replaceChild(titleInput, tTitle);
       sepCard.replaceChild(descriptInput, tDescript);
+
+      editBtn.innerText = "Save";
+
+      editBtn.addEventListener("click", () => {
+        if (titleInput.value === "") {
+          alert("Title is compulsory");
+          return;
+        }
+        //creating variables for newly added values
+        const newTitle = titleInput.value.trim();
+
+        const newDescript = descriptInput.value.trim();
+
+        //Update the values in the array
+        tasks[index].title = newTitle;
+        tasks[index].description = newDescript;
+
+        renderTask();
+      });
     });
 
     //Adding div to sepCard and sepCard to card
@@ -95,5 +116,3 @@ function renderTask() {
     card.appendChild(sepCard);
   });
 }
-
-//Delete button

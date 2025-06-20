@@ -42,10 +42,6 @@ h1 {
   border-radius: 2rem;
 }
 
-.containe::spelling-error {
-  color: red;
-}
-
 .container::-webkit-scrollbar {
   display: none;
 }
@@ -69,6 +65,35 @@ h1 {
   padding: 6px;
   resize: none;
 }
+
+.task-title {
+  height: 2rem;
+  width: 17rem;
+  border: 0 solid transparent;
+  border-radius: 0.5rem;
+  background-color: rgb(209, 234, 255);
+  padding-left: 6px;
+  font-weight: 530;
+  margin: 5px;
+}
+.task-title::-webkit-scrollbar {
+  display: none;
+}
+.description {
+  height: 2rem;
+  width: 17rem;
+  border: 0 solid transparent;
+  border-radius: 0.5rem;
+  background-color: rgb(209, 234, 255);
+  overflow: auto;
+  padding: 6px;
+  resize: none;
+  margin: 5px;
+}
+.description::-webkit-scrollbar {
+  display: none;
+}
+
 #description::-webkit-scrollbar {
   display: none;
 }
