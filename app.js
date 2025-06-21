@@ -43,11 +43,13 @@ function renderTask() {
     const tTitle = document.createElement("p");
     tTitle.innerText = item.title;
     tTitle.classList.add("tCard");
+    tTitle.style.fontWeight = "bold";
+    tTitle.style.fontSize = "18px";
     sepCard.appendChild(tTitle);
 
     //Description
-    const tDescript = document.createElement("p");
-    tDescript.innerText = item.description;
+    const tDescript = document.createElement("div");
+    tDescript.innerText = item.description.trim();
     tDescript.classList.add("tCard");
     sepCard.appendChild(tDescript);
 

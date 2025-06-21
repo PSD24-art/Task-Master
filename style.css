@@ -15,6 +15,7 @@ sup {
   min-height: 100vh;
   background: linear-gradient(135deg, #a8edea, #fed6e3);
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -56,7 +57,7 @@ h1 {
 }
 
 #description {
-  height: 4rem;
+  height: auto;
   width: 18rem;
   border: 0 solid transparent;
   border-radius: 0.5rem;
@@ -66,7 +67,7 @@ h1 {
   resize: none;
 }
 
-.task-title {
+.description .task-title {
   height: 2rem;
   width: 17rem;
   border: 0 solid transparent;
@@ -80,7 +81,7 @@ h1 {
   display: none;
 }
 .description {
-  height: 2rem;
+  height: auto;
   width: 17rem;
   border: 0 solid transparent;
   border-radius: 0.5rem;
@@ -115,6 +116,23 @@ h1 {
   cursor: pointer;
 }
 
+#card-scroll {
+  width: 20rem;
+  z-index: 2;
+  position: absolute;
+  top: 46%;
+  left: 31.2%;
+  height: 32%;
+  /* border: 2px solid black; */
+  overflow-y: auto;
+  overflow: auto;
+  padding: 5px;
+}
+
+#card-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 #card {
   flex-direction: column;
   border: 2px solid black;
@@ -126,7 +144,8 @@ h1 {
   border: 0 solid transparent;
   border-radius: 0.5rem;
   background-color: transparent;
-  margin-top: 5px;
+  margin-top: 3px;
+  margin-left: 10px;
 }
 .sepCard {
   background-color: azure;
@@ -139,14 +158,15 @@ h1 {
   border: 2px solid black;
   height: auto;
   width: 18rem;
-  display: flex;
+  display: inline-block;
   align-items: start;
   justify-content: left;
   border: 0 solid transparent;
   border-radius: 0.5rem;
   padding-left: 3%;
-  height: 20px;
-  text-align: center;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 
 .btnGrp {
@@ -154,6 +174,7 @@ h1 {
   display: flex;
   align-content: flex-start;
   justify-content: flex-start;
+  margin: 4px;
 }
 
 .btn {
@@ -169,7 +190,11 @@ h1 {
   border-radius: 0.2rem;
   box-shadow: 0 0 3px black;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
 }
 
 .chat {
